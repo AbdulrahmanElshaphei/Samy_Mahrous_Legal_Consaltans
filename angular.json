@@ -41,6 +41,8 @@
             "allowedCommonJsDependencies": [
               "canvg",
               "html2canvas",
+              "docx",
+              "buffer",
               "jspdf",
               "mammoth",
               "@babel/runtime",
