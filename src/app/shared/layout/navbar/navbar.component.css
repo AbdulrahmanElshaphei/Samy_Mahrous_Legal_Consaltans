@@ -51,6 +51,29 @@
   direction: rtl;
 }
 
+/* تنسيق الأعمدة */
+.dropdown-menu.dropdown-columns {
+  width: 600px; /* وسّعت القائمة أكتر */
+  padding: 20px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item i {
+  margin-left: 8px;
+  color: #c7954a; /* لون السهم */
+  font-size: 14px;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 8px 10px;
+  white-space: normal; /* يسمح للعناوين الطويلة تنزل سطر */
+}
+
 /* Active links */
 .active {
   color: #6c7271;

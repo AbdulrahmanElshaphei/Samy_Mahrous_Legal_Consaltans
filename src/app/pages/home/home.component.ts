@@ -31,13 +31,13 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   };
 
   resumes = [
-    { image: 'assets/images/اتفاقية-وساطة-تجارية.webp' },
-    { image: 'assets/images/اتفاقية-الغاء-رخصة-تجارية.docx.webp' },
-    { image: 'assets/images/عقد-بيع-حصص-وفسخ-شراكة.webp' },
-    { image: 'assets/images/عقد-تأسيس-شركة-اعمال-مدنية.webp' },
-    { image: 'assets/images/عقـــد-بيع-محل-تجارى.webp' },
-    { image: 'assets/images/عقد-تعيين-وكيل-خدمات-محلي.webp' },
-    { image: 'assets/images/عقد-بيع حصص-وملحق-بتعديل-عقد-تأسيس.webp' },
+    { image: 'assets/images/الغاء.png' },
+    { image: 'assets/images/عقـــد-بيع-محل-تجارى.png' },
+    { image: 'assets/images/عقد-تأسيس-شركة-اعمال-مدنية.png' },
+    { image: 'assets/images/اتفاقية-وساطة-تجارية.png' },
+    { image: 'assets/images/عقد-تعيين-وكيل-خدمات-محلي.png' },
+    { image: 'assets/images/عقد-بيع-حصص-وفسخ-شراكة.png' },
+    { image: 'assets/images/عقد-بيع حصص-وملحق-بتعديل-عقد-تأسيس.png' },
   ];
 
   constructor(private toastr: ToastrService, @Inject(PLATFORM_ID) private platformId: Object) {
@@ -60,10 +60,10 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
 
     emailjs.send(
-      'service_j5k3889',
-      'template_h2r7kho',
+      'service_u05ciym',
+      'template_gus4lip',
       this.formData,
-      '57pj8qlkDabVqp8kH'
+      'w5YEfaytgTKkXuVTi'
     ).then(() => {
       this.toastr.success('تم إرسال رسالتك بنجاح ✅');
       this.formData = { name: '', email: '', phone: '', message: '' };

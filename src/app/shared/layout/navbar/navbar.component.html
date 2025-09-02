@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-transparent fixed-top" dir="rtl" [class.scrolled]="navbarScrolled">
   <div class="container-xl d-flex align-items-center justify-content-between">
-    
+
     <!-- الشعار -->
     <a routerLink="/home" class="navbar-brand d-flex align-items-center gap-2">
       <img src="assets/images/30c600fe0a3827da.png" alt="Law Experts Logo" class="logo-img" />
@@ -21,21 +21,44 @@
           <li class="nav-item"><a routerLink="/home" class="nav-link fw-medium text-white">الرئيسية</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle fw-medium text-white" role="button" data-bs-toggle="dropdown">العقود</a>
-            <ul class="dropdown-menu text-start">
-              <li><a routerLink="/templates" class="dropdown-item">اتفاقية الغاء رخصة تجارية</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">اتفاقية وساطة تجارية</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد بيع حصص وملحق بتعديل عقد تأسيس</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد تقديم خدمات استشارات قــــانونية</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد أتفاق بتوكيل أحد الورثة او وسيط عقاري بالبيع</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد بيع حصص وفسخ شراكة</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقـــد بيع محل تجارى</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد تأسيس شركة اعمال مدنية</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد تعيين وكيل خدمات محلي</a></li>
+            <ul class="dropdown-menu text-start dropdown-columns">
+              <div class="row">
+                <div class="col-md-6">
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> اتفاقية الغاء
+                      رخصة
+                      تجارية</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item">
+                      <i class="fa fa-angle-left"></i> اتفاقية وساطة تجارية</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد بيع حصص
+                      وملحق
+                      بتعديل عقد تأسيس</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تقديم خدمات
+                      استشارات قــــانونية</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد أتفاق بتوكيل
+                      أحد
+                      الورثة او وسيط عقاري بالبيع</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد بيع حصص وفسخ
+                      شراكة</a></li>
+                </div>
+                <div class="col-md-6">
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقـــد بيع محل
+                      تجارى</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تأسيس شركة
+                      اعمال
+                      مدنية</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تعيين وكيل
+                      خدمات
+                      محلي</a></li>
+                </div>
+
+              </div>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link fw-medium text-white" routerLink="/" fragment="about">من نحن</a></li>
-          <li class="nav-item"><a class="nav-link fw-medium text-white" routerLink="/" fragment="services">الخدمات</a></li>
-          <li class="nav-item"><a class="nav-link fw-medium text-white" routerLink="/" fragment="contact">اتصل بنا</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-white" routerLink="/" fragment="services">الخدمات</a>
+          </li>
+          <li class="nav-item"><a class="nav-link fw-medium text-white" routerLink="/" fragment="contact">اتصل بنا</a>
+          </li>
         </ul>
       </div>
 
@@ -48,7 +71,9 @@
             </a>
             <ul class="dropdown-menu text-end text-dark">
               <li><a routerLink="/savedContracts" class="dropdown-item">العقود المحفوظة</a></li>
-              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
               <li><a (click)="logOut()" class="dropdown-item signOut-edit">تسجيل الخروج</a></li>
             </ul>
           </div>
@@ -74,7 +99,9 @@
             </a>
             <ul class="dropdown-menu text-end text-dark">
               <li><a routerLink="/savedContracts" class="dropdown-item">العقود المحفوظة</a></li>
-              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
               <li><a (click)="logOut()" class="dropdown-item signOut-edit">تسجيل الخروج</a></li>
             </ul>
           </div>
@@ -103,25 +130,27 @@
             العقود
           </a>
           <ul class="dropdown-menu dropdown-menu-end text-start w-100">
-            <li><a routerLink="/templates" class="dropdown-item">اتفاقية الغاء رخصة تجارية</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">اتفاقية وساطة تجارية</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد بيع حصص وملحق </a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد تقديم خدمات استشارات قــــانونية</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد أتفاق بتوكيل أحد الورثة</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد بيع حصص وفسخ شراكة</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقـــد بيع محل تجارى</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد تأسيس شركة اعمال مدنية</a></li>
-              <li><a routerLink="/templates" class="dropdown-item">عقد تعيين وكيل خدمات محلي</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> اتفاقية الغاء رخصة تجارية</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> اتفاقية وساطة تجارية</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد بيع حصص وملحق </a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تقديم خدمات استشارات قــــانونية</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد أتفاق بتوكيل أحد الورثة</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد بيع حصص وفسخ شراكة</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقـــد بيع محل تجارى</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تأسيس شركة اعمال مدنية</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تعيين وكيل خدمات محلي</a></li>
           </ul>
         </li>
         <li class="nav-item w-100">
           <a routerLink="/" fragment="about" class="nav-link text-white w-100" data-bs-dismiss="offcanvas">من نحن</a>
         </li>
         <li class="nav-item w-100">
-          <a routerLink="/" fragment="services" class="nav-link text-white w-100" data-bs-dismiss="offcanvas">الخدمات</a>
+          <a routerLink="/" fragment="services" class="nav-link text-white w-100"
+            data-bs-dismiss="offcanvas">الخدمات</a>
         </li>
         <li class="nav-item w-100">
-          <a routerLink="/" fragment="contact" class="nav-link text-white w-100" data-bs-dismiss="offcanvas">اتصل بنا</a>
+          <a routerLink="/" fragment="contact" class="nav-link text-white w-100" data-bs-dismiss="offcanvas">اتصل
+            بنا</a>
         </li>
 
         <!-- ✅ لو المستخدم عامل تسجيل دخول -->
@@ -131,9 +160,13 @@
               <i class="fa-solid fa-user me-2"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-end text-end w-100">
-              <li><a routerLink="/savedContracts" class="dropdown-item" data-bs-dismiss="offcanvas">العقود المحفوظة</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a (click)="logOut()" class="dropdown-item signOut-edit" data-bs-dismiss="offcanvas">تسجيل الخروج</a></li>
+              <li><a routerLink="/savedContracts" class="dropdown-item" data-bs-dismiss="offcanvas">العقود المحفوظة</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a (click)="logOut()" class="dropdown-item signOut-edit" data-bs-dismiss="offcanvas">تسجيل الخروج</a>
+              </li>
             </ul>
           </li>
         </ng-container>
@@ -142,7 +175,8 @@
       <!-- ⬇️ لو المستخدم ضيف -->
       <ng-template #guestOffcanvas>
         <div class="w-100 px-3 py-4 d-grid gap-2">
-          <button routerLink="/login" class="btn w-100 color-button-home2" data-bs-dismiss="offcanvas">تسجيل الدخول</button>
+          <button routerLink="/login" class="btn w-100 color-button-home2" data-bs-dismiss="offcanvas">تسجيل
+            الدخول</button>
         </div>
       </ng-template>
     </div>

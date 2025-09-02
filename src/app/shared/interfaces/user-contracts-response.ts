@@ -1,4 +1,4 @@
-export type UserContractsResponse = UserContractItem[];
+// export type UserContractsResponse = UserContractItem[];
 
 export interface UserContractItem {
   templateId: any;   // غيّر any لـ number أو string لو عارف النوع

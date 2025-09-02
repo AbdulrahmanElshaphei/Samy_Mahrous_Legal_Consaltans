@@ -40,10 +40,22 @@ export class TemplatesComponent {
   }
 
   // تحميل العقود والتأكد من الروابط
+  // تحميل العقود والتأكد من الروابط
   loadContracts(): void {
     this.contractService.getContracts().subscribe({
       next: (res: ContractItem[]) => {
-        this.allContracts = res;
+        // تعديل كل URL قبل التخزين
+        this.allContracts = res.map(contract => {
+          return {
+            ...contract,
+            fileUrl: contract.fileUrl?.startsWith('http://')
+              ? contract.fileUrl.replace('http://', 'https://')
+              : contract.fileUrl,
+            imageUrl: contract.imageUrl?.startsWith('http://')
+              ? contract.imageUrl.replace('http://', 'https://')
+              : contract.imageUrl
+          };
+        });
 
         if (this.allContracts.length > 0) {
           this.activeContract = this.allContracts[0];
@@ -52,13 +64,7 @@ export class TemplatesComponent {
         // التحقق من الروابط فقط على المتصفح
         if (this.isBrowser) {
           this.allContracts.forEach(contract => {
-            // تحويل الرابط لـ https لو هو http
-            let url = contract.fileUrl;
-            if (url.startsWith('http://')) {
-              url = url.replace('http://', 'https://');
-            }
-
-            const encodedUrl = encodeURI(url);
+            const encodedUrl = encodeURI(contract.fileUrl);
             fetch(encodedUrl)
               .then(resp => {
                 if (!resp.ok) throw new Error('الرابط غير متاح!');
@@ -71,6 +77,7 @@ export class TemplatesComponent {
       error: (err) => console.error('Error fetching contracts:', err)
     });
   }
+
 
   // الفلترة حسب البحث
   get filteredContracts(): ContractItem[] {

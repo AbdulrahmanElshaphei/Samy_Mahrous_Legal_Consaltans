@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Environment } from '../../Base/environment/environment';
 
 import { ContractProductResponse } from '../interfaces/contract-product-response';
 import { UploadTemplateResponse } from '../interfaces/upload-template-response';
-import { UserContractsResponse } from '../interfaces/user-contracts-response';
+import { UserContractItem } from '../interfaces/user-contracts-response';
 import { ContractItem } from '../interfaces/contracts-list-response';
 
 @Injectable({
@@ -25,16 +25,27 @@ export class ContractServiceService {
     return this.http.get<ContractProductResponse>(`${this.apiUrl}/api/Contracts/product/${id}`);
   }
 
-  uploadTemplate(file: File): Observable<UploadTemplateResponse> {
+  uploadTemplate(file: File): Observable<any> {
     const formData = new FormData();
     formData.append('file', file);
-    return this.http.post<UploadTemplateResponse>(`${this.apiUrl}/api/Contracts/fill-template`, formData);
-  }
 
-  getUserContracts(): Observable<UserContractsResponse[]> {
     const token = localStorage.getItem('userToken') || '';
-    return this.http.get<UserContractsResponse[]>(`${this.apiUrl}/api/Contracts/user-contracts`, {
-      headers: { Authorization: `Bearer ${token}` }
+
+    return this.http.post<any>(`${this.apiUrl}/api/Contracts/fill-template`, formData, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     });
   }
+
+
+
+
+  getUserContracts(): Observable<UserContractItem[]> {
+  const token = localStorage.getItem('userToken') || '';
+  return this.http.get<UserContractItem[]>(`${this.apiUrl}/api/Contracts/user-contracts`, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+}
+
 }
