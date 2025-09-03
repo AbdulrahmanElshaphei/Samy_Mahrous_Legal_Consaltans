@@ -122,9 +122,6 @@ export class ContractEditorComponent implements OnInit {
         tempDiv.style.background = '#fff';
         tempDiv.style.boxSizing = 'border-box';
 
-        const ps = tempDiv.querySelectorAll('p, div');
-        ps.forEach(p => (p as HTMLElement).style.textAlign = 'right');
-
         document.body.appendChild(tempDiv);
 
         html2canvas.default(tempDiv, { scale: 2, useCORS: true }).then(canvas => {
@@ -168,7 +165,6 @@ export class ContractEditorComponent implements OnInit {
     if (!this.htmlContent) return;
 
     try {
-      // 📝 تحويل htmlContent لفقرات docx
       const parser = new DOMParser();
       const docParsed = parser.parseFromString(this.htmlContent, 'text/html');
       const paragraphs: Paragraph[] = [];
@@ -176,13 +172,33 @@ export class ContractEditorComponent implements OnInit {
       docParsed.body.querySelectorAll('p, div, h1, h2, h3').forEach(el => {
         const text = el.textContent?.trim() || '';
         if (text) {
+          const style = (el as HTMLElement).style;
+          const computedStyle = window.getComputedStyle(el as HTMLElement);
+
+          // قراءة المحاذاة والاتجاه من inline style أولاً ثم من computed
+          const direction = style.direction || computedStyle.direction || 'ltr';
+          const textAlign = style.textAlign || computedStyle.textAlign || 'left';
+
+          // تحويل القيم إلى الصيغة الصحيحة لـ docx
+          let alignment: 'left' | 'right' | 'center' = 'left';
+          if (textAlign.toLowerCase() === 'center') alignment = 'center';
+          else if (textAlign.toLowerCase() === 'right') alignment = 'right';
+
           paragraphs.push(
             new Paragraph({
-              children: [new TextRun({ text, font: "Arial" })],
+              alignment,
+              bidirectional: direction === 'rtl',
+              children: [
+                new TextRun({
+                  text,
+                  font: 'Arial',
+                }),
+              ],
             })
           );
         }
       });
+
 
       const doc = new Document({
         sections: [{ children: paragraphs }]
@@ -194,7 +210,6 @@ export class ContractEditorComponent implements OnInit {
         type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
       });
 
-      // رفع الملف للسيرفر
       this.contractService.uploadTemplate(file).subscribe({
         next: (res) => {
           console.log('تم الحفظ بنجاح ✅', res);
