@@ -12,6 +12,7 @@
     transition: all 0.3s;
     color: #fff;
     padding: 10px;
+    cursor: pointer;
 }
 
 .icons-footer a:hover{
