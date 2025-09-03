@@ -5,8 +5,11 @@
     <div class="search-box">
       <input
         type="text"
+        id="contractSearch"
+        name="contractSearch"
         placeholder="ابحث عن نوع العقد"
         [(ngModel)]="searchQuery"
+        autocomplete="off"
       />
     </div>
 
@@ -31,9 +34,8 @@
   <!-- المعاينة -->
   <div class="preview">
     <h2>
-  معاينة {{ hoveredContract?.title || activeContract?.title }}
-</h2>
-
+      معاينة {{ hoveredContract?.title || activeContract?.title }}
+    </h2>
 
     <!-- عرض الصور -->
     <img
