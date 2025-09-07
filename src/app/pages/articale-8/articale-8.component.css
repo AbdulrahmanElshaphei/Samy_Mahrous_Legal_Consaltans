@@ -1,0 +1,80 @@
+/* Start About */
+.About {
+  background-image: url(../../../assets/images/imageedit_3_9486878882.png);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #19223a;
+}
+
+.Aboutus {
+  position: relative;
+  color: #c7954a;
+  font-size: 50px;
+}
+
+.Aboutus::before {
+  content: attr(data-bigletter);
+  position: absolute;
+  font-size: 2em;
+  opacity: 0.06;
+  top: -0.5em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.About-content hr {
+  width: 40px;
+  border-top: 2px solid #c7954a;
+  margin: 0 auto 20px;
+  transition: all 0.3s;
+}
+
+.About-content:hover hr {
+  width: 80px;
+}
+
+.about-article p {
+  color: #d5e2f0;
+}
+/* End About */
+body {
+  background-color: #111; /* خلفية داكنة */
+  color: #fff; /* كل النصوص باللون الأبيض */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  text-align: center;
+}
+a {
+  color: #4fc3f7; /* لون الروابط أزرق فاتح */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+p {
+  color: #fff; /* التأكد أن العناوين بيضا */
+}
+ul,
+ol {
+  padding: 20px;
+  color: #fff;
+  font-size: 30px;
+}
+
+li {
+  padding-left: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+section {
+  margin-bottom: 130px;
+  text-align: right;
+}

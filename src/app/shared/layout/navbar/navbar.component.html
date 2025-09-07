@@ -1,0 +1,184 @@
+<nav class="navbar navbar-expand-lg bg-transparent fixed-top" dir="rtl" [class.scrolled]="navbarScrolled">
+  <div class="container-xl d-flex align-items-center justify-content-between">
+
+    <!-- الشعار -->
+    <a routerLink="/home" class="navbar-brand d-flex align-items-center gap-2">
+      <img src="assets/images/30c600fe0a3827da.png" alt="Law Experts Logo" class="logo-img" />
+    </a>
+
+    <!-- لو مش في صفحة login أو register -->
+    <ng-container *ngIf="!isAuthPage; else authOnlyView">
+
+      <!-- زر التلت شرط (Offcanvas للموبايل) -->
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav"
+        aria-controls="mobileNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- قائمة الديسكتوب -->
+      <div class="collapse navbar-collapse d-none d-lg-block flex-grow-1 justify-content-center">
+        <ul class="navbar-nav flex-row gap-4">
+          <li class="nav-item"><a routerLink="/home" class="nav-link fw-medium text-white">الرئيسية</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-medium text-white" role="button" data-bs-toggle="dropdown">العقود</a>
+            <ul class="dropdown-menu text-start dropdown-columns">
+              <div class="row">
+                <div class="col-md-6">
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> اتفاقية الغاء
+                      رخصة
+                      تجارية</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item">
+                      <i class="fa fa-angle-left"></i> اتفاقية وساطة تجارية</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد بيع حصص
+                      وملحق
+                      بتعديل عقد تأسيس</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تقديم خدمات
+                      استشارات قــــانونية</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد أتفاق بتوكيل
+                      أحد
+                      الورثة او وسيط عقاري بالبيع</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد بيع حصص وفسخ
+                      شراكة</a></li>
+                </div>
+                <div class="col-md-6">
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقـــد بيع محل
+                      تجارى</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تأسيس شركة
+                      اعمال
+                      مدنية</a></li>
+                  <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تعيين وكيل
+                      خدمات
+                      محلي</a></li>
+                </div>
+
+              </div>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link fw-medium text-white" routerLink="/" fragment="about">من نحن</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium text-white" routerLink="/" fragment="services">الخدمات</a>
+          </li>
+          <li class="nav-item"><a class="nav-link fw-medium text-white" routerLink="/" fragment="contact">اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- منطقة المستخدم -->
+      <div class="user-area d-none d-lg-flex align-items-center text-white">
+        <ng-container *ngIf="isLoggedIn; else guestDesktop">
+          <div class="dropdown me-4">
+            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-user fs-5"></i>
+            </a>
+            <ul class="dropdown-menu text-end text-dark">
+              <li><a routerLink="/savedContracts" class="dropdown-item">العقود المحفوظة</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a (click)="logOut()" class="dropdown-item signOut-edit">تسجيل الخروج</a></li>
+            </ul>
+          </div>
+        </ng-container>
+        <ng-template #guestDesktop>
+          <button routerLink="/login" class="btn me-2 color-button-home2">تسجيل الدخول</button>
+        </ng-template>
+      </div>
+
+    </ng-container>
+
+    <!-- 👇 محتوى خاص بـ login أو register -->
+    <ng-template #authOnlyView>
+      <div class="d-flex align-items-center gap-2">
+        <button routerLink="/login" class="btn me-2 color-button-home2">تسجيل الدخول</button>
+        <button routerLink="/register" class="btn color-button-home">إنشاء حساب</button>
+
+        <!-- أيقونة المستخدم (لو مسجل دخول) -->
+        <ng-container *ngIf="isLoggedIn">
+          <div class="dropdown me-2">
+            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-user fs-5"></i>
+            </a>
+            <ul class="dropdown-menu text-end text-dark">
+              <li><a routerLink="/savedContracts" class="dropdown-item">العقود المحفوظة</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a (click)="logOut()" class="dropdown-item signOut-edit">تسجيل الخروج</a></li>
+            </ul>
+          </div>
+        </ng-container>
+      </div>
+    </ng-template>
+
+  </div>
+</nav>
+
+<!-- ░▒▓ Off‑canvas Sidebar ▓▒░ -->
+<ng-container *ngIf="!isAuthPage">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" dir="rtl" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header">
+      <h5 id="mobileNavLabel" class="offcanvas-title text-white fw-semibold">القائمة</h5>
+      <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body p-0">
+      <ul class="navbar-nav flex-column gap-1 align-items-end text-end w-100 px-3">
+        <li class="nav-item w-100">
+          <a routerLink="/home" class="nav-link text-white w-100" data-bs-dismiss="offcanvas">الرئيسية</a>
+        </li>
+        <li class="nav-item dropdown w-100">
+          <a class="nav-link dropdown-toggle text-white w-100" role="button" data-bs-toggle="dropdown">
+            العقود
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-start w-100">
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> اتفاقية الغاء رخصة تجارية</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> اتفاقية وساطة تجارية</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد بيع حصص وملحق </a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تقديم خدمات استشارات قــــانونية</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد أتفاق بتوكيل أحد الورثة</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد بيع حصص وفسخ شراكة</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقـــد بيع محل تجارى</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تأسيس شركة اعمال مدنية</a></li>
+            <li><a routerLink="/templates" class="dropdown-item"><i class="fa fa-angle-left"></i> عقد تعيين وكيل خدمات محلي</a></li>
+          </ul>
+        </li>
+        <li class="nav-item w-100">
+          <a routerLink="/" fragment="about" class="nav-link text-white w-100" data-bs-dismiss="offcanvas">من نحن</a>
+        </li>
+        <li class="nav-item w-100">
+          <a routerLink="/" fragment="services" class="nav-link text-white w-100"
+            data-bs-dismiss="offcanvas">الخدمات</a>
+        </li>
+        <li class="nav-item w-100">
+          <a routerLink="/" fragment="contact" class="nav-link text-white w-100" data-bs-dismiss="offcanvas">اتصل
+            بنا</a>
+        </li>
+
+        <!-- ✅ لو المستخدم عامل تسجيل دخول -->
+        <ng-container *ngIf="isLoggedIn; else guestOffcanvas">
+          <li class="nav-item dropdown w-100 mt-2">
+            <a class="nav-link dropdown-toggle text-white w-100" role="button" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-user me-2"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end text-end w-100">
+              <li><a routerLink="/savedContracts" class="dropdown-item" data-bs-dismiss="offcanvas">العقود المحفوظة</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a (click)="logOut()" class="dropdown-item signOut-edit" data-bs-dismiss="offcanvas">تسجيل الخروج</a>
+              </li>
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+
+      <!-- ⬇️ لو المستخدم ضيف -->
+      <ng-template #guestOffcanvas>
+        <div class="w-100 px-3 py-4 d-grid gap-2">
+          <button routerLink="/login" class="btn w-100 color-button-home2" data-bs-dismiss="offcanvas">تسجيل
+            الدخول</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</ng-container>

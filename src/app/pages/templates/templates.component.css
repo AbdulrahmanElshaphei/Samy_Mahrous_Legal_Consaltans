@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+:host {
+    display: block;
+    min-height: 100vh;
+    background-image: url(../../../assets/images/imageedit_3_9486878882.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #19223a;
+    padding-top: 100px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    gap: 40px;
+}
+
+.sidebar {
+    flex: 2;
+    background-color: #eeeff0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #eeeff0;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0 10px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.role-button {
+    padding: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.role-button:hover {
+    background-color: #19223a;
+    color: #C7954A;
+}
+
+.role-button.active {
+    border: 1px solid #19223a;
+    color: #C7954A;
+    font-weight: bold;
+}
+
+.preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeeff0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.preview h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.resume-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: none;
+}
+
+.resume-image.show {
+    display: block;
+}
+
+.use-button {
+    padding: 12px 24px;
+    font-size: 15px;
+    background-color: #C7954A;
+    border: transparent;
+    transition: 0.3s all ease-in-out;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.use-button:hover {
+     background-color: #fff;
+    color: #C7954A;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sidebar,
+    .preview {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .button-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar,
+    .preview {
+        padding: 20px;
+    }
+
+    .resume-image,
+    .use-button {
+        width: 100%;
+    }
+}

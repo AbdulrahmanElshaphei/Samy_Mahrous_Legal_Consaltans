@@ -1,0 +1,56 @@
+<div class="container">
+  <!-- الشريط الجانبي -->
+  <div class="sidebar">
+    <!-- مربع البحث -->
+    <div class="search-box">
+      <input
+        type="text"
+        id="contractSearch"
+        name="contractSearch"
+        placeholder="ابحث عن نوع العقد"
+        [(ngModel)]="searchQuery"
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- عنوان القسم -->
+    <div class="section-title">نماذج عقود قانونية</div>
+
+    <!-- قائمة العقود -->
+    <div class="button-grid">
+      <div
+        *ngFor="let contract of filteredContracts"
+        class="role-button"
+        [class.active]="contract === activeContract"
+        (click)="selectContract(contract)"
+        (mouseenter)="onMouseEnter(contract)"
+        (mouseleave)="onMouseLeave()"
+      >
+        {{ contract.title }}
+      </div>
+    </div>
+  </div>
+
+  <!-- المعاينة -->
+  <div class="preview">
+    <h2>
+      معاينة {{ hoveredContract?.title || activeContract?.title }}
+    </h2>
+
+    <!-- عرض الصور -->
+    <img
+      *ngFor="let contract of allContracts"
+      #resumeImg
+      class="resume-image"
+      [id]="contractToId(contract.title)"
+      [src]="contract.imageUrl"
+      [alt]="contract.title"
+      [class.show]="contract === activeContract"
+    />
+
+    <!-- زر استخدام العقد -->
+    <button class="use-button" (click)="onUseContract()">
+      استخدم هذا العقد
+    </button>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+<section class="min-vh-100 d-flex flex-column justify-content-center align-items-center text-white">
+
+  <div class="container" style="max-width: 600px;">
+    <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()" class="p-5" style="max-width: 600px;">
+
+      <!-- رسالة الخطأ العامة -->
+      @if (errorMessage) {
+      <div class="alert alert-danger text-center" role="alert">
+        <i class="fa-solid fa-circle-exclamation me-1"></i> {{errorMessage}}
+      </div>
+      }
+
+      <!-- Name -->
+      <div class="mb-3">
+        <label for="floating_name" class="form-label">الإسم</label>
+        <input type="text" formControlName="name" id="floating_name" class="form-control" autocomplete="name" required>
+        @if (registerForm.get('name')?.errors && registerForm.get('name')?.touched) {
+        <div class="text-danger small mt-1">
+          @if (registerForm.get('name')?.errors?.['required']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> من فضلك أدخل الإسم</div>
+          } @else if (registerForm.get('name')?.errors?.['minlength']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> يجب أن يكون الاسم 3 أحرف أو أكثر</div>
+          } @else if (registerForm.get('name')?.errors?.['maxlength']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> يجب ألا يزيد الاسم عن 35 حرفًا</div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="floating_email" class="form-label">البريد الإلكتروني</label>
+        <input type="email" formControlName="email" id="floating_email" class="form-control" autocomplete="email"
+          required>
+        @if (registerForm.get('email')?.errors && registerForm.get('email')?.touched) {
+        <div class="text-danger small mt-1">
+          @if (registerForm.get('email')?.errors?.['required']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> من فضلك أدخل البريد الإلكتروني</div>
+          } @else if (registerForm.get('email')?.errors?.['email']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> أدخل بريد إلكتروني صحيح</div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="floating_password" class="form-label">كلمة المرور</label>
+        <input type="password" formControlName="password" id="floating_password" class="form-control"
+          autocomplete="new-password" required>
+        @if (registerForm.get('password')?.errors && registerForm.get('password')?.touched) {
+        <div class="text-danger small mt-1">
+          @if (registerForm.get('password')?.errors?.['required']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> من فضلك أدخل كلمة المرور</div>
+          } @else if (registerForm.get('password')?.errors?.['pattern']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> يجب أن تتكون كلمة المرور من 6 أحرف على الأقل، وتبدأ
+            بحرف كبير، ثم حروف صغيرة، تليها أرقام، وتنتهي برمز خاص </div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="mb-3">
+        <label for="floating_repeat_password" class="form-label">تأكيد كلمة المرور</label>
+        <input type="password" formControlName="rePassword" id="floating_repeat_password" class="form-control"
+          autocomplete="new-password" required>
+        @if (registerForm.get('rePassword')?.errors?.['required'] && registerForm.get('rePassword')?.touched) {
+        <div class="text-danger small mt-1">
+          <i class="fa-solid fa-circle-exclamation me-1"></i> من فضلك قم بتأكيد كلمة المرور
+        </div>
+        }
+        @if (registerForm.hasError('mismatch') && registerForm.touched) {
+        <div class="text-danger small mt-1">
+          <i class="fa-solid fa-circle-exclamation me-1"></i> كلمة المرور غير متطابقة
+        </div>
+        }
+      </div>
+
+      <!-- Phone -->
+      <div class="mb-3">
+        <label for="floating_phene" class="form-label">رقم الهاتف</label>
+        <input type="tel" formControlName="phone" id="floating_phene" class="form-control" autocomplete="tel" required>
+        @if (registerForm.get('phone')?.errors && registerForm.get('phone')?.touched) {
+        <div class="text-danger small mt-1">
+          @if (registerForm.get('phone')?.errors?.['required']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> من فضلك أدخل رقم الهاتف</div>
+          } @else if (registerForm.get('phone')?.errors?.['pattern']) {
+          <div><i class="fa-solid fa-circle-exclamation me-1"></i> من فضلك أدخل رقم هاتف صحيح</div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- رسالة النجاح -->
+      @if (successMessage) {
+      <div class="alert alert-success text-center" role="alert">
+        <i class="fa-solid fa-circle-check me-1"></i> {{successMessage}}
+      </div>
+      }
+
+      <!-- زر التسجيل -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <button type="submit" class="btn edit-color2 w-100 w-md-auto">
+          تسجيل الدخول
+          @if (isLoading) {
+          <span><i class="fa-solid fa-spinner fa-spin ms-2"></i></span>
+          }
+        </button>
+        <span>
+          هل لديك حساب بالفعل؟
+          <a routerLink="/login" class="edit-all-color">سجل الدخول من هنا.</a>
+        </span>
+      </div>
+    </form>
+  </div>
+</section>

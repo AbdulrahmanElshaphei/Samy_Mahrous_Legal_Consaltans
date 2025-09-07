@@ -1,0 +1,78 @@
+.About{
+  background-image: url(../../../assets/images/imageedit_3_9486878882.png);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #19223a;
+  color: D5E2F0;
+}
+
+.saved-contracts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* في النص عمودي */
+  align-items: center;       /* في النص أفقي */
+  min-height: 100vh;         /* يغطي الشاشة كلها */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* غلاف الجدول عشان يبقى ريسبونسف */
+.table-wrapper {
+  width: 100%;
+  max-width: 1200px;        /* أقصى عرض للجدول على الشاشات الكبيرة */
+  overflow-x: auto;         /* Scroll أفقي لو الجدول كبير */
+}
+
+.contracts-table {
+  width: 100%;
+  min-width: 600px;         /* أقل عرض للجدول عشان الأعمدة تبقى واضحة */
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contracts-table th,
+.contracts-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  white-space: nowrap;      /* يمنع النص من الكسر */
+}
+thead{
+  background-color: #C7954A;
+}
+
+.contracts-table th {
+  font-weight: bold;
+  color: #ddd;
+}
+
+tbody{
+  background-color: #19223a;
+  color: #ddd;
+}
+
+/* على الشاشات الصغيرة (موبايل) */
+@media (max-width: 768px) {
+  .contracts-table {
+    font-size: 14px;
+    min-width: 400px;
+  }
+  .contracts-table th,
+  .contracts-table td {
+    padding: 8px;
+  }
+}
+
+/* على الشاشات الأصغر جدًا */
+@media (max-width: 480px) {
+  .contracts-table {
+    font-size: 12px;
+    min-width: 300px;
+  }
+  .contracts-table th,
+  .contracts-table td {
+    padding: 6px;
+  }
+}

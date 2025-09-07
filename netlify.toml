@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "dist/samy-mahrous-legal-consaltans/browser"
+
+[build.environment]
+  NODE_VERSION = "22"

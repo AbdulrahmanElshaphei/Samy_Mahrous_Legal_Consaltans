@@ -1,0 +1,124 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-image: url(../../../assets/images/imageedit_3_9486878882.png);
+  /* ✅ غيّر المسار حسب مكان الصورة فعلاً */
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #19223a;
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+/* ✅ اللفّافة الرئيسية */
+.editor-wrapper {
+  padding: 30px;
+  padding-top: 50px;
+  /* عشان يبعد عن الناف بار */
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #eeeff0;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* زر التحميل */
+.download-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #C7954A;
+  border: transparent;
+  transition: 0.3s all ease-in-out;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.download-btn:hover {
+  background-color: #fff;
+  color: #C7954A;
+}
+
+.color-button-home2 {
+  background-color: #fff;
+  border: transparent;
+  transition: 0.3s all ease-in-out;
+  color: #C7954A;
+  padding: 10px 25px;
+  margin-top: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.color-button-home2:hover {
+  background-color: #C7954A;
+  color: #fff;
+}
+
+
+/* ✅ اجعل المحتوى يتجاوب مع حجم الشاشة */
+@media (max-width: 1024px) {
+  .editor-wrapper {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .download-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .color-button-home2 {
+   width: 100%;
+    font-size: 15px;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editor-wrapper {
+    padding: 15px;
+    padding-top: 80px;
+    border-radius: 10px;
+  }
+
+  .download-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .color-button-home2 {
+    padding: 10px;
+    font-size: 14px;
+    margin-right: 0px;
+  }
+
+  angular-editor {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .editor-wrapper {
+    padding: 10px;
+    padding-top: 70px;
+    max-width: 95%;
+  }
+
+  .download-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .color-button-home2 {
+    font-size: 13px;
+    padding: 8px 12px;
+    margin-right: 0px;
+  }
+}

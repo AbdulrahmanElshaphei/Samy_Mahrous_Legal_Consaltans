@@ -1,0 +1,52 @@
+<section class="min-vh-100 d-flex flex-column justify-content-center align-items-center text-white">
+  <div class="container" style="max-width: 500px;">
+    <form [formGroup]="verifyForm" (ngSubmit)="verifySubmit()" class="p-5">
+
+      <!-- Error Message -->
+      @if (errorMessage) {
+      <div class="alert alert-danger text-center" role="alert">
+        <i class="fa-solid fa-circle-exclamation me-1"></i> {{ errorMessage }}
+      </div>
+      }
+
+      <!-- Success Message -->
+      @if (successMessage) {
+      <div class="alert alert-success text-center" role="alert">
+        <i class="fa-solid fa-circle-check me-1"></i> {{ successMessage }}
+      </div>
+      }
+
+      <!-- OTP Code -->
+      <div class="mb-3">
+        <label for="otp_code" class="form-label">أدخل كود التحقق</label>
+        <input type="text" formControlName="code" id="otp_code" class="form-control text-center" required maxlength="6"
+          inputmode="numeric" autocomplete="one-time-code" placeholder="أدخل الكود المكون من 6 أرقام">
+        @if (verifyForm.get('code')?.errors && verifyForm.get('code')?.touched) {
+        <div class="text-danger small mt-1 text-center">
+          <i class="fa-solid fa-circle-exclamation me-1"></i> من فضلك أدخل الكود الصحيح
+        </div>
+        }
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+        <button type="submit" class="btn edit-color2 w-100">
+          تأكيد الحساب
+          @if (isLoading) {
+          <span><i class="fa-solid fa-spinner fa-spin ms-2"></i></span>
+          }
+        </button>
+
+        <!-- Resend OTP -->
+        <button type="button" class="btn color-button-home2 w-100 mt-2" (click)="resendCode()"
+          [disabled]="resendLoading">
+          إعادة إرسال الكود
+          @if (resendLoading) {
+          <span><i class="fa-solid fa-spinner fa-spin ms-2"></i></span>
+          }
+        </button>
+      </div>
+
+    </form>
+  </div>
+</section>

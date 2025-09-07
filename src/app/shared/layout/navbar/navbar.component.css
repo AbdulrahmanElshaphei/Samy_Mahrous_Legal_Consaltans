@@ -1,0 +1,159 @@
+/* ==== Responsive RTL Navbar + Offcanvas ==== */
+
+.navbar { border-bottom: 1px solid #d2cfcf41; transition: background-color 0.3s; }
+.logo-img { height: 68px; width: auto; }
+.navbar-toggler { border: 0; }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' fill='none' stroke='%23C7954A' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  filter: none;
+}
+
+/* Scroll effect */
+.navbar.scrolled {
+  background: #0D1B3F !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  border-bottom: none !important;
+}
+
+.color-button-home{
+    background-color: #C7954A;
+    border: transparent;
+    transition: 0.3s all ease-in-out;
+    color: #fff;
+}
+
+.color-button-home:hover{
+    background-color: #fff;
+    color: #C7954A;
+}
+
+.color-button-home2{
+    background-color: #fff;
+    border: transparent;
+    transition: 0.3s all ease-in-out;
+    color: #C7954A;
+}
+
+.color-button-home2:hover{
+    background-color: #C7954A;
+    color: #fff;
+}
+
+/* Desktop nav */
+.navbar-nav {
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 20px;
+}
+.dropdown-menu {
+  text-align: right;
+  direction: rtl;
+}
+
+/* تنسيق الأعمدة */
+.dropdown-menu.dropdown-columns {
+  width: 600px; /* وسّعت القائمة أكتر */
+  padding: 20px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item i {
+  margin-left: 8px;
+  color: #c7954a; /* لون السهم */
+  font-size: 14px;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 8px 10px;
+  white-space: normal; /* يسمح للعناوين الطويلة تنزل سطر */
+}
+
+/* Active links */
+.active {
+  color: #6c7271;
+  transition: 0.3s;
+}
+.active:hover {
+  color: #00A362;
+}
+
+/* Auth buttons */
+.btns-account {
+  background: #00A362;
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+.btns-account:hover {
+  background: transparent;
+  color: #00A362;
+  border-color: #00A362;
+}
+.btns-download {
+  background: transparent;
+  color: #00A362;
+  font-weight: 600;
+  border: 1px solid #00A362;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+.btns-download:hover {
+  background: #00A362;
+  color: #fff;
+  border-color: transparent;
+}
+.signOut-edit { cursor: pointer; color: red; }
+
+/* Offcanvas */
+.offcanvas-end { width: 80%; background: #0D1B3F; }
+.offcanvas-header { border-bottom: 1px solid rgba(255,255,255,.15); }
+.btn-close-white { filter: invert(1); }
+
+.offcanvas .nav-link, .offcanvas .btn {
+  font-size: 1.1rem;
+}
+
+.offcanvas .navbar-nav {
+  align-items: flex-end;
+  text-align: right;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.offcanvas .nav-item {
+  width: 100%;
+}
+
+.offcanvas .nav-link {
+  display: block;
+  width: 100%;
+  text-align: right;
+  color: #fff !important;
+}
+
+/* Shadow focus for toggle */
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 .25rem rgba(199,149,74,.45);
+}
+
+/* Adjust spacing of dropdown toggle */
+.navbar .dropdown-toggle::after {
+  margin-right: 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .navbar-nav { gap: .75rem; }
+}
+@media (min-width: 992px) {
+  .navbar-nav { gap: 2rem; }
+}

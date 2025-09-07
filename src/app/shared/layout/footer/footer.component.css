@@ -1,0 +1,25 @@
+/* Start Foooter */
+.Footer{
+    background-image: url(../../../../assets/images/imageedit_3_9486878882.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #19223a;
+    border-top: 1px solid #d2cfcf41;
+}
+
+.icons-footer a{
+    transition: all 0.3s;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.icons-footer a:hover{
+    color:#C7954A;
+}
+
+.content-footer p{
+    letter-spacing: 0.5px;
+}
+/* End Footer */

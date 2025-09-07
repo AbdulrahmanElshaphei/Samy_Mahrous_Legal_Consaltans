@@ -1,0 +1,32 @@
+<div class="saved-contracts-container About">
+  <!-- تحميل -->
+  <div *ngIf="loading" class="loading">⏳ جاري تحميل العقود...</div>
+
+  <!-- خطأ -->
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <!-- عرض العقود -->
+  <div *ngIf="!loading && !error && userContracts.length > 0" class="table-wrapper">
+    <table class="contracts-table">
+      <thead>
+        <tr>
+          <th>📌 رقم</th>
+          <th>📄 اسم الملف</th>
+          <th>📅 تاريخ الإنشاء</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contract of userContracts">
+          <td>{{ contract.id }}</td>
+          <td>{{ contract.filePath }}</td>
+          <td>{{ contract.createdAt | date: 'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- في حالة عدم وجود عقود -->
+  <div *ngIf="!loading && !error && userContracts.length === 0" class="no-contracts">
+    🚫 لا يوجد عقود محفوظة حتى الآن
+  </div>
+</div>

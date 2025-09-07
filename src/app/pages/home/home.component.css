@@ -1,0 +1,797 @@
+/* ^Start home^*/
+.Home {
+  position: relative;
+}
+
+.Home .carousel-item {
+  height: 100vh;
+}
+
+.Home .carousel-caption {
+  bottom: 270px;
+}
+
+.color-button-home {
+  background-color: #C7954A;
+  border: transparent;
+  transition: 0.3s all ease-in-out;
+  color: #fff;
+}
+
+.color-button-home:hover {
+  background-color: #fff;
+  color: #C7954A;
+}
+
+.buttons-slide {
+  background-color: transparent;
+  width: 45px;
+  border: 1px solid white;
+  border-right: 0;
+  top: 50%;
+  position: absolute;
+  cursor: pointer;
+  height: 120px;
+}
+
+.Home .buttons-slide hr {
+  color: #fff;
+}
+
+.Home .buttons-slide .carousel-control-next,
+.Home .buttons-slide .carousel-control-prev {
+  position: static;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 0;
+  padding: 0;
+  color: #fff;
+  text-align: start;
+  opacity: 1;
+  transition: 0;
+}
+
+.carousel-img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.Home .angelrigt {
+  color: #7f7f90;
+  transition: 0.3s all ease-in-out;
+  margin-right: 12px;
+}
+
+.Home .angelrigt:hover {
+  color: #fff;
+}
+
+.Home .angelleft {
+  margin-right: 12px;
+  color: #7f7f90;
+  transition: 0.3s all ease-in-out;
+}
+
+.Home .angelleft:hover {
+  color: #fff;
+}
+
+.mouse {
+  position: absolute;
+  width: 26px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 13px;
+  background: transparent;
+  bottom: 30px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transition: all 0.3s
+}
+
+.mouse a {
+  display: block;
+  width: 26px;
+  height: 40px;
+}
+
+.mouse .wheel {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 6px;
+  left: 0;
+  right: 0;
+  animation: magic-mouse 1.7s infinite ease;
+}
+
+
+/* End Home */
+
+
+
+
+
+
+
+
+/* Start Blog */
+.Blog {
+  background-image: url(../../../assets/images/imageedit_3_9486878882.png);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #19223a;
+}
+
+.Blog-content hr {
+  width: 40px;
+  border-top: 2px solid #C7954A;
+  margin: 0 auto 20px;
+  transition: all .3s;
+}
+
+.Blog-content:hover hr {
+  width: 80px;
+}
+
+.Blog .clients {
+  position: relative;
+  color: #C7954A;
+}
+
+.Blog-content p {
+  font-size: 18px;
+  color: #D5E2F0;
+}
+
+.embla {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  direction: rtl;
+}
+
+.embla__container {
+  display: flex;
+  gap: 16px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.embla__slide {
+  flex: 0 0 calc(20% - 16px);
+  margin: 0;
+  min-width: 0;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+/* الصورة النشطة (في النص) */
+.embla__slide.is-selected {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+/* الصورة */
+.embla__slide img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* الأسهم */
+.embla__prev,
+.embla__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0d1b3f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.embla__prev:hover,
+.embla__next:hover{
+  background-color: #C7954A;
+}
+
+.embla__prev {
+  left: 10px;
+}
+
+.embla__next {
+  right: 10px;
+}
+
+/* النقاط */
+.embla__dots {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.embla__dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.embla__dots span.active {
+  background: #C7954A;
+}
+
+/* End Blog */
+
+
+
+
+/* Start About */
+.About {
+  background-color: #eeeff0;
+}
+
+.About-content p {
+  font-size: 18px;
+}
+
+.Aboutus {
+  position: relative;
+  color: #C7954A;
+}
+
+.Aboutus::before {
+  content: attr(data-bigletter);
+  position: absolute;
+  font-size: 2em;
+  opacity: .1;
+  top: -0.5em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-transform: uppercase;
+  color: #7f7f90;
+}
+
+.About-content hr {
+  width: 40px;
+  border-top: 2px solid #C7954A;
+  margin: 0 auto 20px;
+  transition: all .3s;
+}
+
+.About-content:hover hr {
+  width: 80px;
+}
+
+.item1 span {
+  color: var(--secondry-color);
+  font-weight: 500;
+}
+
+.about-article p {
+  color: #524f4f;
+  margin-top: 100px;
+  line-height: 30px;
+}
+
+/* End About */
+
+
+/* Start Services */
+.Services {
+  background-image: url(../../../assets/images/imageedit_3_9486878882.png);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #19223a;
+}
+
+.edit-servicefont {
+  font-size: 50px;
+  font-weight: 700;
+  color: #C7954A;
+}
+
+
+.service-title hr {
+  width: 40px;
+  border-top: 2px solid #C7954A;
+  margin: 0 auto 20px;
+  transition: all .3s;
+}
+
+.service-title:hover hr {
+  width: 80px;
+}
+
+.icon-circle {
+  height: 100px;
+  width: 100px;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 0 10px #19223a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 400ms ease-in-out;
+}
+
+.self-icon .fa-solid {
+  color: #C7954A;
+}
+
+.service-box:hover .icon-circle {
+  background-color: #19223a;
+  box-shadow: 0 0 0 10px #C7954A;
+}
+
+.service-box:hover .self-icon {
+  color: white;
+}
+
+.service-box:hover .self-icon .fa-solid {
+  color: white;
+}
+
+/* End Services */
+
+
+
+
+/* Start article */
+.Articale {
+  padding-top: 80px;
+  background-image: url(../../../assets/images/wave-haikei.svg);
+  padding-block: 40px;
+}
+
+.Articale .item1edit,
+.Articale .item2edit,
+.item-edit3 {
+  margin-left: 16px;
+  width: 29%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Articale-title {
+  position: relative;
+  color: #C7954A;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.Articale-title::before {
+  content: attr(data-bigletter);
+  position: absolute;
+  font-size: 2em;
+  opacity: 0.1;
+  top: -0.5em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-transform: uppercase;
+  color: #7f7f90;
+  text-align: center;
+}
+
+.Articale-content p {
+  font-size: 18px;
+}
+
+.Articale-content hr {
+  width: 40px;
+  border-top: 2px solid #C7954A;
+  margin: 0 auto 20px;
+  transition: all 0.3s;
+}
+
+.Articale-content:hover hr {
+  width: 80px;
+}
+
+/* إعادة ضبط طبقات الكاروسيل */
+.carousel-inner {
+  position: relative;
+  z-index: 0;
+}
+
+.carousel-item {
+  position: relative !important;
+  z-index: 0 !important;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-item.active {
+  z-index: 1 !important;
+  opacity: 1;
+}
+
+
+
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: #19223a;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  background-image: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.carousel-control-next-icon:hover,
+.carousel-control-prev-icon:hover {
+  background-color: #C7954A;
+}
+
+
+.carousel-control-next,
+.carousel-control-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: 0 0;
+  filter: var(--bs-carousel-control-icon-filter);
+  border: 0;
+  opacity: 1;
+}
+
+/* End article */
+
+
+
+
+
+/* Start Contact */
+.Contact {
+  background-color: #eeeff0;
+}
+
+.gettouch {
+  position: relative;
+  color: #C7954A;
+}
+
+.gettouch::before {
+  content: attr(data-bigletter);
+  position: absolute;
+  font-size: 2em;
+  opacity: .1;
+  top: -0.5em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-transform: uppercase;
+  color: #7f7f90;
+}
+
+.Contact-content hr {
+  width: 40px;
+  border-top: 2px solid #C7954A;
+  margin: 0 auto 20px;
+  transition: all .3s;
+}
+
+.Contact-content:hover hr {
+  width: 80px;
+}
+
+.Contact-content p {
+  font-size: 18px;
+}
+
+.icons-Contact {
+  color: #19223a;
+}
+
+.items-Contact {
+  text-align: start;
+}
+
+.items-Contact h4 {
+  font-weight: 600;
+  margin: 0;
+  transition: 400ms;
+  font-size: 18px;
+  color: #19223a;
+}
+
+.items-Contact a {
+  color: #19223a;
+}
+
+.h3-contact {
+  font-size: 32px;
+  line-height: 52px;
+  font-weight: 600;
+  text-align: start;
+}
+
+.area-edit {
+  height: 120px;
+}
+
+
+.form-control:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 .25rem rgba(14, 27, 63, 0.8);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  text-align: right;
+  /* يخلّي النص يبدأ من اليمين */
+  direction: rtl;
+  /* يضمن الكتابة من اليمين لليسار */
+}
+
+.edit-cursor-button {
+  cursor: pointer;
+}
+
+/* End Contacts */
+
+
+
+/* Start Home */
+@media (max-width: 835px) {
+  .img-download {
+    order: 0;
+  }
+
+  .Home .content-download {
+    order: 1;
+  }
+
+  .Home .carousel-caption {
+    bottom: 350px;
+  }
+
+  .styled-img {
+    width: 50%;
+    margin-top: 20px;
+  }
+
+}
+
+@media (max-width: 640px) {
+  .Home .carousel-caption {
+    bottom: 250px;
+  }
+
+  h1 {
+    font-size: 37px;
+    font-weight: 700;
+    max-width: 500px;
+  }
+
+  .styled-img {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+}
+
+@media (max-width: 320px) {
+  .Home .carousel-caption {
+    bottom: 140px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .styled-img {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+}
+
+/* End Home */
+
+
+@media (Max-Width: 992px) {
+  .about-article p {
+    margin-top: 0px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .embla__slide {
+    flex: 0 0 calc(50% - 10px);
+    /* يعرض صورتين فقط */
+  }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .embla__slide {
+    flex: 0 0 90%;
+    /* صورة واحدة فقط */
+  }
+}
+
+
+
+/* Article */
+/* ✅ Responsive: tablets */
+@media (max-width: 992px) {
+  .Articale .carousel-item img {
+    width: 27% !important;
+    /* margin: 10px auto !important; */
+  }
+
+  .Articale .item1edit,
+  .Articale .item2edit,
+  .item-edit3 {
+    margin-left: 16px;
+  }
+
+  .Articale-title {
+    font-size: 2rem;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    filter: var(--bs-carousel-control-icon-filter);
+    border: 0;
+    opacity: 1;
+  }
+}
+
+/* ✅ إصلاح مشكلة الكاروسيل في الموبايل */
+@media (max-width: 768px) {
+  .Articale .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* كل عنصر في الكاروسيل */
+  .Articale .carousel-item {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-control-next,
+.carousel-control-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: 0 0;
+  filter: var(--bs-carousel-control-icon-filter);
+  border: 0;
+  opacity: 1;
+}
+
+  .Articale .carousel-item img {
+    width: 80% !important;
+    margin: 10px auto;
+    display: block;
+  }
+
+  /* تأكد من أن الحركة والانتقال ما زالوا شغالين */
+  .Articale .carousel-inner .carousel-item {
+    transition: transform 0.6s ease-in-out !important;
+  }
+
+  /* تفعيل السلايد النشط */
+  .Articale .carousel-item.active {
+    transform: translateX(0) !important;
+  }
+
+  /* السلايد القادم من اليمين */
+  .Articale .carousel-item-next {
+    transform: translateX(100%) !important;
+  }
+
+  /* السلايد القادم من اليسار */
+  .Articale .carousel-item-prev {
+    transform: translateX(-100%) !important;
+  }
+}
+
+
+
+/* Article */
+
+
+
+@keyframes magic-mouse {
+  0% {
+    top: 6px;
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 18px;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,36 @@
+section {
+  background-image: url(../../../../assets/images/5888755764633278964.png);
+  padding-top: 120px;
+  padding-bottom: 50px;
+  font-size: 16px;
+  font-family: var(--font) !important;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+:root {
+  --font: "Poppins", sans-serif;
+}
+
+form {
+  background-image: linear-gradient(rgb(13, 27, 63), rgb(13, 27, 63));
+  box-shadow: 0 0 7px 3px rgb(199, 149, 74);
+}
+
+.edit-all-color {
+  color: rgb(199, 149, 74);
+}
+
+
+.edit-color2 {
+  color: #fff;
+  background-color: rgb(199, 149, 74);
+  border: transparent;
+  transition: 0.3s all ease-in-out;
+}
+
+.edit-color2:hover {
+  color: #C7954A;
+  background-color: #fff;
+}

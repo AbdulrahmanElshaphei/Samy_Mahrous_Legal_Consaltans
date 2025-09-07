@@ -1,0 +1,21 @@
+<div class="editor-wrapper">
+  <h2 style="text-align: center; margin-bottom: 15px;">
+    تعديل العقد: {{ activeTitle || 'جاري التحميل...' }}
+  </h2>
+
+  <!-- محرر النصوص -->
+  <angular-editor
+    [(ngModel)]="htmlContent"
+    [config]="editorConfig">
+  </angular-editor>
+
+  <!-- الأزرار -->
+  <div class="button-group" style="margin-top: 15px; text-align: center;">
+    <button (click)="downloadPdf()" class="download-btn">
+      تحميل PDF
+    </button>
+    <button (click)="saveContractEdits()" class="color-button-home2">
+      حفظ التعديلات
+    </button>
+  </div>
+</div>
