@@ -21,7 +21,7 @@ export class RegisterComponent {
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{6,}$/)]),
     rePassword: new FormControl(null, [Validators.required]),
-    phone: new FormControl(null, [Validators.required, Validators.pattern(/^01[0125][0-9]{8}$/)])
+    phone: new FormControl(null, [Validators.required, Validators.pattern(/^[0-9]{7,15}$/)])
   }, { validators: RegisterComponent.passwordMatchValidator() });
 
   constructor(private _AuthService: AuthService, private _Router: Router) {}
