@@ -80,7 +80,7 @@
       <!-- Phone -->
       <div class="mb-3">
         <label for="floating_phene" class="form-label">رقم الهاتف</label>
-        <input type="tel" formControlName="phone" id="floating_phene" class="form-control" autocomplete="tel" required>
+        <input type="text" formControlName="phone" id="floating_phene" class="form-control" autocomplete="tel" required>
         @if (registerForm.get('phone')?.errors && registerForm.get('phone')?.touched) {
         <div class="text-danger small mt-1">
           @if (registerForm.get('phone')?.errors?.['required']) {
