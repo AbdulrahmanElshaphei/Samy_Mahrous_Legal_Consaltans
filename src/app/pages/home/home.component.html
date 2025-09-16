@@ -1,78 +1,93 @@
-<head>
-  <!-- google tag -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=AW-17542736996"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
+<!-- ضع هذا داخل <head> في src/index.html مرة واحدة فقط -->
+<meta charset="UTF-8" />
+<title>
+  مكتب سامي محروس للاستشارات القانونية في الإمارات | محامي عقود وقضايا
+</title>
+<meta
+  name="description"
+  content="مكتب سامي محروس ... الاستشارة القانونية المجانية الآن."
+/>
+<meta
+  name="keywords"
+  content="محامي في الإمارات, استشارات قانونية, عقود جاهزة, محامي في الشارقة, محامي في أبوظبي, محامي في دبي, قضايا مدنية, قضايا شركات, مكتب محاماة في الإمارات"
+/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://lawexpertsuae.com/" />
+
+<!-- Google tag (gtag.js) - ضعها أولاً -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=AW-17542736996"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "AW-17542736996");
+</script>
+
+<!-- JSON-LD (تأكد أن مسار الصورة هو URL عام صالح) -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "مكتب سامي محروس للاستشارات القانونية",
+    "image": "https://lawexpertsuae.com/assets/images/30c600fe0a3827da.png",
+    "@id": "https://lawexpertsuae.com/#legalservice",
+    "url": "https://lawexpertsuae.com/",
+    "telephone": "+971552029019",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "مركز الشموخ للعمال، منطقة التجارة الحرة",
+      "addressLocality": "أم القيوين",
+      "addressRegion": "الإمارات",
+      "postalCode": "00000",
+      "addressCountry": "AE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "25.5630",
+      "longitude": "55.5533"
+    },
+    "areaServed": ["دبي", "الشارقة", "أبوظبي", "العين", "عجمان", "أم القيوين"],
+    "sameAs": [
+      "https://www.facebook.com/lawexperts.ae?locale=ar_AR",
+      "https://www.tiktok.com/@samy_mashal?lang=en",
+      "https://www.instagram.com/samy_mashaal/"
+    ]
+  }
+</script>
+
+<!-- event snippet function (بعد تعريف gtag) مع fallback وفتح في تاب جديد -->
+<script>
+  function gtag_report_conversion(url) {
+    var called = false;
+    function openUrl() {
+      if (called) return;
+      called = true;
+      if (typeof url !== "undefined") {
+        // افتح في تاب جديد عشان ما تفقد المستخدم لو الصفحة أُعيد تحميلها
+        window.open(url, "_blank", "noopener");
+      }
     }
-    gtag("js", new Date());
+    // fallback بعد ثانية لو callback ما اتنفّذتش
+    setTimeout(openUrl, 1000);
 
-    gtag("config", "AW-17542736996");
-  </script>
-  <meta charset="UTF-8" />
-  <title>
-    مكتب سامي محروس للاستشارات القانونية في الإمارات | محامي عقود وقضايا
-  </title>
-
-  <meta
-    name="description"
-    content="مكتب سامي محروس للاستشارات القانونية بخبرة 25 عامًا في الإمارات. متخصصون في القضايا المدنية، الجنائية، الأحوال الشخصية، والشركات. استشارة قانونية مجانية الآن."
-  />
-
-  <meta
-    name="keywords"
-    content="محامي في الإمارات, استشارات قانونية, عقود جاهزة, محامي في الشارقة, محامي في أبوظبي, محامي في دبي, قضايا مدنية, قضايا شركات, مكتب محاماة في الإمارات"
-  />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://lawexpertsuae.com/" />
-
-  <!-- Schema Markup JSON-LD -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LegalService",
-      "name": "مكتب سامي محروس للاستشارات القانونية",
-      "image": "D:\Samy_Mahrous_Legal_Consaltans-master\Samy_Mahrous_Legal_Consaltans-master\Samy_Mahrous_Legal_Consaltans-master\src\assets\images\30c600fe0a3827da.png",
-      "@id": "",
-      "url": "https://lawexpertsuae.com/",
-      "telephone": "+971552029019",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "مركز الشموخ للعمال، منطقة التجارة الحرة",
-        "addressLocality": "أم القيوين",
-        "addressRegion": "الإمارات",
-        "postalCode": "00000",
-        "addressCountry": "AE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "25.5630",
-        "longitude": "55.5533"
-      },
-      "areaServed": [
-        "دبي",
-        "الشارقة",
-        "أبوظبي",
-        "العين",
-        "عجمان",
-        "أم القيوين"
-      ],
-      "sameAs": [
-        "https://www.facebook.com/lawexperts.ae?locale=ar_AR",
-        "https://www.tiktok.com/@samy_mashal?lang=en"
-        "https://www.instagram.com/samy_mashaal/"
-      ]
+    if (typeof gtag === "function") {
+      gtag("event", "conversion", {
+        send_to: "AW-17542736996/6tHOCMPV-5sbEOTYg61B",
+        event_callback: openUrl,
+      });
+    } else {
+      // لو gtag مش محمّل لأي سبب
+      openUrl();
     }
-  </script>
-  
-</head>
-
+    return false;
+  }
+</script>
 <div
   class="Home d-flex justify-content-center align-items-center home"
   id="home"
@@ -553,7 +568,9 @@
             </div>
             <div class="col-lg-11 col-md-10 col-10 items-Contact">
               <h4>البريد الالكتروني</h4>
-              <a href="https://mail.google.com/mail/u/0/?fs=1&to=lawexpertsuae@gmail.com&tf=cm" class="text-decoration-none"
+              <a
+                href="https://mail.google.com/mail/u/0/?fs=1&to=lawexpertsuae@gmail.com&tf=cm"
+                class="text-decoration-none"
                 >lawexpertsuae&#64;gmail.com</a
               >
             </div>
