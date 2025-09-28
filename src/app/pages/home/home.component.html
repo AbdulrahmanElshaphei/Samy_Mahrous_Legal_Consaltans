@@ -1,36 +1,16 @@
-<!-- ضع هذا داخل <head> في src/index.html مرة واحدة فقط -->
-<meta charset="UTF-8" />
-<title>
-  مكتب سامي محروس للاستشارات القانونية في الإمارات | محامي عقود وقضايا
-</title>
-<meta
-  name="description"
-  content="مكتب سامي محروس ... الاستشارة القانونية المجانية الآن."
-/>
-<meta
-  name="keywords"
-  content="محامي في الإمارات, استشارات قانونية, عقود جاهزة, محامي في الشارقة, محامي في أبوظبي, محامي في دبي, قضايا مدنية, قضايا شركات, مكتب محاماة في الإمارات"
-/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://lawexpertsuae.com/" />
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>مكتب سامي محروس للاستشارات القانونية في الإمارات | محامي عقود وقضايا</title>
+  <meta name="description" content="مكتب سامي محروس ... الاستشارة القانونية المجانية الآن." />
+  <meta name="keywords" content="محامي في الإمارات, استشارات قانونية, عقود جاهزة, محامي في الشارقة, محامي في أبوظبي, محامي في دبي, قضايا مدنية, قضايا شركات, مكتب محاماة في الإمارات" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lawexpertsuae.com/" />
 
-<!-- Google tag (gtag.js) - ضعها أولاً -->
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=AW-17542736996"
-></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", "AW-17542736996");
-</script>
-
-<!-- JSON-LD (تأكد أن مسار الصورة هو URL عام صالح) -->
-<script type="application/ld+json">
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LegalService",
@@ -59,35 +39,21 @@
       "https://www.instagram.com/samy_mashaal/"
     ]
   }
-</script>
+  </script>
 
-<!-- event snippet function (بعد تعريف gtag) مع fallback وفتح في تاب جديد -->
-<script>
-  function gtag_report_conversion(url) {
-    var called = false;
-    function openUrl() {
-      if (called) return;
-      called = true;
-      if (typeof url !== "undefined") {
-        // افتح في تاب جديد عشان ما تفقد المستخدم لو الصفحة أُعيد تحميلها
-        window.open(url, "_blank", "noopener");
-      }
-    }
-    // fallback بعد ثانية لو callback ما اتنفّذتش
-    setTimeout(openUrl, 1000);
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV9YCGRGM8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    if (typeof gtag === "function") {
-      gtag("event", "conversion", {
-        send_to: "AW-17542736996/6tHOCMPV-5sbEOTYg61B",
-        event_callback: openUrl,
-      });
-    } else {
-      // لو gtag مش محمّل لأي سبب
-      openUrl();
-    }
-    return false;
-  }
-</script>
+    // لمنع page_view التلقائي لأننا سنتتبعه من Angular (SPA)
+    gtag('config', 'G-TV9YCGRGM8', { 'send_page_view': false });
+  </script>
+</head>
+<body>
+  
 <div
   class="Home d-flex justify-content-center align-items-center home"
   id="home"
@@ -657,4 +623,5 @@
     </div>
   </div>
 </header>
+</body></html>
 <!-- End Contact -->
